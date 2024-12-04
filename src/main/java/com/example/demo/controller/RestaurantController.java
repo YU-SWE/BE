@@ -19,14 +19,6 @@ public class RestaurantController {
     @Autowired
     private RestaurantService restaurantService;
 
-//    @GetMapping("/category/{category}")
-//    public ResponseEntity<List<Restaurant>> getRestaurantsByCategory(
-//            @PathVariable("category") String category) {
-//        String decodedCategory = URLDecoder.decode(category, StandardCharsets.UTF_8);
-//        List<Restaurant> restaurants = restaurantService.getRestaurantsByCategory(decodedCategory);
-//        return new ResponseEntity<>(restaurants, HttpStatus.OK);
-//    }
-
     @ResponseBody
     @GetMapping(value ="/category/{rtag}", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<RestaurantDTO> getTop10RestaurantsByCategory(@PathVariable("rtag") String rtag) {
@@ -40,7 +32,6 @@ public class RestaurantController {
             @PathVariable("rloc") String rloc) {
         
         List<RestaurantDTO> restaurants = restaurantService.findTop10ByTagAndLocation(rtag, rloc);
-        //System.out.println("1111111111111111111111111111111" + restaurants);
         return ResponseEntity.ok(restaurants);
     }
 

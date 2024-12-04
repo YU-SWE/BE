@@ -35,36 +35,6 @@ public class RestaurantService {
     public List<RestaurantDTO> findTop10ByTagAndLocation(String tag, String location) {
         return restaurantRepository.findTop10ByRtagAndRlocOrderByRstarDesc(tag, location);
     }
-
-    @Transactional
-    public Restaurant createRestaurant(Restaurant restaurant) {
-        return restaurantRepository.save(restaurant);
-    }
-
-    @Transactional
-    public Restaurant updateRestaurant(int restaurantId, Restaurant restaurantDetails) {
-        Optional<Restaurant> restaurant = restaurantRepository.findById(restaurantId);
-        if (restaurant.isPresent()) {
-            Restaurant existingRestaurant = restaurant.get();
-            existingRestaurant.setRname(restaurantDetails.getRname());
-            existingRestaurant.setAddr(restaurantDetails.getAddr());
-            existingRestaurant.setPhone(restaurantDetails.getPhone());
-            existingRestaurant.setRloc(restaurantDetails.getRloc());
-            // 필요한 다른 필드들도 여기에 추가
-            return restaurantRepository.save(existingRestaurant);
-        }
-        return null;
-    }
-
-    @Transactional
-    public boolean deleteRestaurant(int restaurantId) {
-        Optional<Restaurant> restaurant = restaurantRepository.findById(restaurantId);
-        if (restaurant.isPresent()) {
-            restaurantRepository.delete(restaurant.get());
-            return true;
-        }
-        return false;
-    }
     
  // 페이징 처리된 레스토랑 필터링 로직 추가
  public Page<RestaurantDTO> getRestaurantsByCategoryAndLocation(String category, String location, int page, int size) {

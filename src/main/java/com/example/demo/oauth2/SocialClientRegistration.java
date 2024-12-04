@@ -8,21 +8,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class SocialClientRegistration {
 
-//    public ClientRegistration naverClientRegistration() {
-//
-//        return ClientRegistration.withRegistrationId("naver")
-//                .clientId("SLeTTfhsEYCGuE_dVJJ4")
-//                .clientSecret("1i9L26jns7")
-//                .redirectUri("http://localhost:8080/login/oauth2/code/naver")
-//                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-//                .scope("name", "email")
-//                .authorizationUri("https://nid.naver.com/oauth2.0/authorize")
-//                .tokenUri("https://nid.naver.com/oauth2.0/token")
-//                .userInfoUri("https://openapi.naver.com/v1/nid/me")
-//                .userNameAttributeName("response")
-//                .build();
-//    }
-
     public ClientRegistration naverClientRegistration() {
         return ClientRegistration.withRegistrationId("naver")
                 .clientId("SLeTTfhsEYCGuE_dVJJ4")
@@ -54,21 +39,6 @@ public class SocialClientRegistration {
                 .userNameAttributeName(IdTokenClaimNames.SUB)
                 .build();
     }
-
-//    public ClientRegistration kakaoClientRegistration() {
-//
-//        return ClientRegistration.withRegistrationId("kakao")
-//                .clientId("b4f76bbf0abeacb0deb048cbb15f10e0")
-//                .clientSecret("BCE1JE5tdGCDGDPPiXFgEnEenHa9xOGG")
-//                .redirectUri("http://localhost:8080/login/oauth2/code/kakao")
-//                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-//                .scope("profile_nickname", "account_email")
-//                .authorizationUri("https://kauth.kakao.com/oauth/authorize")
-//                .tokenUri("https://kauth.kakao.com/oauth/token")
-//                .userInfoUri("https://kapi.kakao.com/v2/user/me")
-//                .userNameAttributeName("id")
-//                .build();
-//    }
 
     public ClientRegistration kakaoClientRegistration() {
         return ClientRegistration.withRegistrationId("kakao")

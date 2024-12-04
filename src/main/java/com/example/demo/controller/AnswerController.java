@@ -45,17 +45,6 @@ public class AnswerController {
         return answerService.getAnswersByQuestionId(questionId);
     }
 
-    //    @DeleteMapping("/{id}")
-//    public ResponseEntity<?> deleteAnswer(@PathVariable Long id, @RequestHeader("Authorization") String token) {
-//        String username = jwtUtil.validateTokenAndGetUsername(token.substring(7));
-//        boolean isAdmin = jwtUtil.isAdmin(token.substring(7));
-//
-//        if (answerService.canModifyOrDelete(id, username, isAdmin)) {
-//            answerService.deleteAnswer(id);
-//            return ResponseEntity.ok("삭제 완료");
-//        }
-//        return ResponseEntity.status(HttpStatus.FORBIDDEN).body("삭제 권한이 없습니다.");
-//    }
     @DeleteMapping("/{answerId}")
     public ResponseEntity<?> deleteAnswer(@PathVariable Long answerId,
                                           @AuthenticationPrincipal UserDetails userDetails) {

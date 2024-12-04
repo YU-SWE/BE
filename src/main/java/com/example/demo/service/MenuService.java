@@ -26,9 +26,6 @@ public class MenuService {
     public List<Menu> getMenusByRestaurantId(Integer rid) {
         // fetch join 사용
         return menuRepository.findByRestaurantIdWithFetchJoin(rid);
-        
-        // 또는 EntityGraph 사용
-        // return menuRepository.findByRestaurant_Rid(rid);
     }
 
     @Transactional

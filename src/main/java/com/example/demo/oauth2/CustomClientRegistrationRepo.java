@@ -14,8 +14,6 @@ public class CustomClientRegistrationRepo {
     }
 
     public ClientRegistrationRepository clientRegistrationRepository(){
-        // 인메모리 방식과 JDBC(DB에 저장)방식 두 가지가 있는데
-        // 네이버, 카카오, 구글 등 10가지 이내이므로 인메모리 방식으로 저장해도 무방
         return new InMemoryClientRegistrationRepository(socialClientRegistration.naverClientRegistration(), socialClientRegistration.googleClientRegistration(), socialClientRegistration.kakaoClientRegistration(), socialClientRegistration.facebookClientRegistration());
     }
 }

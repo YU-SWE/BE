@@ -1,16 +1,13 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.NoticeRequest;
-import com.example.demo.entity.Answer;
 import com.example.demo.entity.Notice;
-import com.example.demo.entity.User;
 import com.example.demo.repository.NoticeRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

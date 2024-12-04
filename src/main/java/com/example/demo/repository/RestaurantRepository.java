@@ -12,11 +12,7 @@ import java.util.List;
 
 public interface RestaurantRepository extends JpaRepository<Restaurant, Integer> {
 
-    //@Query("SELECT DISTINCT r FROM Restaurant r LEFT JOIN FETCH r.menus WHERE r.rtag = :category")
     List<Restaurant> findByRtag(@Param("rtag") String category);
-
-//    @Query("SELECT DISTINCT r FROM Restaurant r LEFT JOIN FETCH r.menus")
-//    List<Restaurant> findAllWithMenus();
 
     List<RestaurantDTO> findTop10ByRtagOrderByRstarDesc(String rtag);
     @Query("SELECT DISTINCT new com.example.demo.dto.RestaurantDTO( r.rid, r.rname, r.rstar, r.image1, r.addr) FROM Restaurant r WHERE r.rtag = :rtag AND r.rloc = :rloc ORDER BY r.rstar DESC LIMIT 10")

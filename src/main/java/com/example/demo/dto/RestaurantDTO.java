@@ -1,6 +1,5 @@
 package com.example.demo.dto;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Getter;
 import lombok.Setter;
 

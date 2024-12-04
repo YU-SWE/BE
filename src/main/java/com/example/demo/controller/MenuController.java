@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-// MenuController.java
-
 import com.example.demo.entity.Menu;
 import com.example.demo.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,9 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.NoticeRequest;
 import com.example.demo.dto.QuestionDTO;
 import com.example.demo.dto.QuestionRequest;
-import com.example.demo.entity.Notice;
 import com.example.demo.entity.Question;
 import com.example.demo.service.QuestionService;
 import com.example.demo.util.JwtUtil;
